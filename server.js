@@ -20,3 +20,10 @@ application.post("/api/notes", (req, res) => {
     fs.writeFileSync("./db/db.json", JSON.stringify(notes))
     res.json(notes);
 });
+
+application.get("/", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/index.html"));
+});
+application.get("/notes", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/index.html"));
+});
