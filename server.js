@@ -10,3 +10,5 @@ application.use(express.urlencoded({ extended: true}));
 application.use(express.json());
 application.use(express.static("./public"));
 
+application.get("api/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "./db/db.json"))});
